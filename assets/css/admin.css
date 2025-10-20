@@ -1,0 +1,144 @@
+.sidebar { 
+            background: #2c3e50; 
+            color: white; 
+            height: 100vh; 
+            position: fixed; 
+            width: 250px; 
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .sidebar .nav-link { 
+            color: white; 
+            padding: 15px 20px; 
+            border-bottom: 1px solid #34495e; 
+        }
+        .sidebar .nav-link:hover { background: #34495e; }
+        .sidebar .nav-link.active { background: #3498db; }
+    .main-content { 
+        margin-left: 250px; 
+        padding: 20px; 
+        transition: margin-left 0.3s ease;
+    }
+    
+    /* Mobile Styles */
+    .mobile-header {
+        display: none;
+        background: #2c3e50;
+        color: white;
+        padding: 15px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .menu-toggle {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .mobile-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* When sidebar is hidden on mobile */
+    .sidebar-hidden .sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar-hidden .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar-hidden .mobile-overlay {
+        display: block;
+    }
+    
+    /* Mobile overlay for closing sidebar */
+    .mobile-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .mobile-header {
+            display: block;
+        }
+        
+        .sidebar {
+            transform: translateX(-100%);
+        }
+        
+        .main-content {
+            margin-left: 0;
+            padding-top: 80px; /* Account for mobile header */
+        }
+        
+        .sidebar-mobile-open .sidebar {
+            transform: translateX(0);
+        }
+        
+        .sidebar-mobile-open .main-content {
+            margin-left: 0;
+        }
+    }
+
+    /* Existing timetable styles remain the same */
+    .timetable-cell { 
+        height: 80px; 
+        border: 1px solid #dee2e6; 
+        padding: 5px; 
+        font-size: 0.8rem;
+        position: relative;
+    }
+    .timetable-cell.filled { 
+        background: #e3f2fd; 
+        border-color: #2196f3;
+    }
+    .timetable-header { 
+        background: #2c3e50; 
+        color: white; 
+        font-weight: bold; 
+        text-align: center;
+    }
+    .time-slot-header {
+        background: #34495e;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+    .subject-badge {
+        font-size: 0.7rem;
+        margin-bottom: 2px;
+    }
+    .teacher-name {
+        font-size: 0.65rem;
+        color: #666;
+    }
+    .room-number {
+        font-size: 0.6rem;
+        color: #888;
+        position: absolute;
+        bottom: 2px;
+        right: 5px;
+    }
+    .loading-spinner {
+        display: none;
+        text-align: center;
+        padding: 10px;
+    }
