@@ -87,28 +87,35 @@ A comprehensive PHP-based School Management Application designed for primary and
 ```bash # Clone the repository
 git clone <repository-url>
 cd school_management
-Create Database ```
-
+Create Database
+```
+---
 ```sql # Create datate and import database Schema
 CREATE DATABASE school_management;
-Import Database Schema ```
+Import Database Schema
+```
+---
 
 ```bash 
 mysql -u your_username -p school_management < sql/school_management.sql
 Configure Database Connection
-Edit includes/config.php with your database credentials: ```
-
+Edit includes/config.php with your database credentials:
+```
+---
 ```php # link your php file to data
 private $host = "localhost";
 private $db_name = "school_management";
 private $username = "your_username";
 private $password = "your_password";
-Set File Permissions ```
+Set File Permissions 
+```
+---
 
-``` bash # Create other folder
+```bash # Create other folder
 chmod 755 uploads/
 chmod 644 includes/config.php
-Configure Web Server ```
+Configure Web Server
+```
 
 - **Point your web server document root to the project directory**
 
